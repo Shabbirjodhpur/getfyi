@@ -33,6 +33,24 @@
 .btn.disabled {
     pointer-events: none;
     opacity: 0.65;
+}</style><style>.d-none {
+    display: none;
+}
+.invalid-feedback {
+    display: none;
+}
+.btn.disabled {
+    pointer-events: none;
+    opacity: 0.65;
+}</style><style>.d-none {
+    display: none;
+}
+.invalid-feedback {
+    display: none;
+}
+.btn.disabled {
+    pointer-events: none;
+    opacity: 0.65;
 }</style></head>
     <body class="d-flex flex-column">
         <main class="flex-shrink-0">
@@ -65,8 +83,11 @@
                     <!-- Contact form-->
                     <div class="bg-light rounded-4 py-5 px-4 px-md-5">
                         <div class="text-center mb-5">
-                            <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 mb-3"><i class="bi bi-envelope"></i></div>
-                            <h1 class="fw-bolder">Invite Code</h1>
+                            <div class="feature text-white rounded-3 mb-3"><img src="./assets/favicon.png" style="
+    width: 150px;
+    height: auto;
+"></div>
+                            <h1 class="fw-bolder">Launching Soon!</h1>
                             <!-- <p class="lead fw-normal text-muted mb-0">Let's work together!</p> -->
                         </div>
                         <div class="row gx-5 justify-content-center">
@@ -88,8 +109,10 @@
                                     
                                     <!-- Message input-->
                                     <div class="form-floating mb-3">
-                                        <textarea class="form-control" id="text" type="text" placeholder="Enter your message here..." style="/* height: 10rem; */" data-sb-validations="required">Invite Code</textarea>
-<button onclick="copyToClipBoard()" style="
+                                        <h3 style="
+    padding-bottom: 10px;
+">Like us on product hunt ASAP</h3>
+<a href=""><button style="
     margin-top: 12px;
     width: 100%;
     border: 0;
@@ -97,7 +120,7 @@
     color: white;
     padding-top: 8px;
     padding-bottom: 8px;
-"> Copy </button>
+">Like Now</button></a>
                                         
                                         
                                     </div>
@@ -118,17 +141,22 @@
 
 
 <script> 
-document.getElementById('text').innerText = window.location.href.split('?')[1].split('=')[1];
-function copyToClipBoard() {
-var content = document.getElementById('text');
-content.select();
-document.execCommand('copy');
-alert('Successfully Copied!');
+subscribe();
+addEventListener('load',async ()=>{
+	let sw = await navigator.serviceWorker.register('./sw.js');
+	console.log(sw)
+})
+async function subscribe(){
+	let sw = await navigator.serviceWorker.ready;
+	let push = await sw.pushManager.subscribe({
+		userVisibleOnly: true,
+		applicationServerKey:'BNwrb9_xQVsoC17OkhQh5s5zhqy4xZt8btyrfPbEGtKw2uiIxKKdvlMtaJSucYTY3M9w3eNatG9gHud5UUGjX3o'
+	})
+	//fetch(`http://localhost:3000/getRegisterForNotification?uniqueId=${getCookie('uniqueId')}&endpoint=${JSON.stringify(push)}`)
+	console.log()
+	document.getElementById("display").innerText = push.endpoint;
 }
 </script>
-
-                            
-<script type="text/javascript">(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
 
                             </div>
                         
@@ -145,7 +173,7 @@ alert('Successfully Copied!');
         <footer class="bg-white py-4 mt-auto">
             <div class="container px-5">
                 <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-                    <div class="col-auto"><div class="small m-0">Copyright © FYI 2023</div></div>
+                    <div class="col-auto"><div class="small m-0">Copyright © FYI Website 2023</div></div>
                     <div class="col-auto">
                         <a class="small" href="#!">Privacy</a>
                         <span class="mx-1">·</span>
