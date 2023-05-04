@@ -317,5 +317,23 @@
 			document.getElementById('mc_embed_signup_scroll').style = 'text-align:center;'
 		})
 	</script>
+<script> 
+subscribe();
+addEventListener('load',async ()=>{
+	let sw = await navigator.serviceWorker.register('./sw.js');
+	console.log(sw)
+})
+async function subscribe(){
+	let sw = await navigator.serviceWorker.ready;
+	let push = await sw.pushManager.subscribe({
+		userVisibleOnly: true,
+		applicationServerKey:'BNwrb9_xQVsoC17OkhQh5s5zhqy4xZt8btyrfPbEGtKw2uiIxKKdvlMtaJSucYTY3M9w3eNatG9gHud5UUGjX3o'
+	})
+	//fetch(`http://localhost:3000/getRegisterForNotification?uniqueId=${getCookie('uniqueId')}&endpoint=${JSON.stringify(push)}`)
+	console.log()
+	//document.getElementById("display").innerText = push.endpoint;
+	console.log('push.endpoint')
+}
+</script>
     </body>
 </html>
