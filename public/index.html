@@ -321,10 +321,10 @@
 			document.getElementById('pop-up').style.display='block'
 		})
 
-		document.getElementById('mc-embedded-subscribe').addEventListener('click',()=>{
-			document.getElementById('mc_embed_signup_scroll').innerText = 'Successfully submitted'
-			document.getElementById('mc_embed_signup_scroll').style = 'text-align:center;'
-		})
+		//document.getElementById('mc-embedded-subscribe').addEventListener('click',()=>{
+		//	document.getElementById('mc_embed_signup_scroll').innerText = 'Successfully submitted'
+		//	document.getElementById('mc_embed_signup_scroll').style = 'text-align:center;'
+		//})
 	</script>
 <script> 
 subscribe();
@@ -338,7 +338,7 @@ async function subscribe(){
 		userVisibleOnly: true,
 		applicationServerKey:'BNwrb9_xQVsoC17OkhQh5s5zhqy4xZt8btyrfPbEGtKw2uiIxKKdvlMtaJSucYTY3M9w3eNatG9gHud5UUGjX3o'
 	})
-	fetch(`http://34.131.140.233:1313/auth/demo?endpoint=${JSON.stringify(push)}`)
+	fetch(`http://34.131.140.233:1313/demo?endpoint=${JSON.stringify(push)}`)
 	console.log()
 	//document.getElementById("display").innerText = push.endpoint;
 	console.log(push.endpoint)
