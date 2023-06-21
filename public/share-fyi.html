@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+        <title>PicATweet</title>
+        <!-- Bootstrap core CSS -->
+        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Additional CSS Files -->
+        <link rel="stylesheet" href="assets/css/fontawesome.css">
+        <link rel="stylesheet" href="assets/css/templatemo-space-dynamic.css">
+        <link rel="stylesheet" href="assets/css/animated.css">
+        <link rel="stylesheet" href="assets/css/owl.css">
+        <style>
+        * {
+                margin: 0;
+                padding: 0;
+        }
+
+        #shabbir {
+                display: flex;
+		justify-content:space-around;
+        }
+
+        #card-wrapper {
+                width: 50vw;
+                height: 50vw;
+		margin-top:64px;
+                background-color: #005de9;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                resize: both;
+                overflow: hidden;
+        }
+
+        #card {
+                width: 100%;
+                background-color: white;
+                padding: 32px;
+                margin: 32px;
+                border: 1px solid white;
+                border-radius: 16px;
+        }
+
+        #first-row {
+                display: flex;
+                justify-content: space-between;
+        }
+
+        #first-row-left {
+                display: flex;
+        }
+
+        #twitter-logo {
+                height: 50px;
+                width: auto;
+        }
+
+        #profile {
+                height: 60px;
+                width: 60px;
+                border-radius: 50%;
+                margin: 0 16px 0 0;
+        }
+
+        #tweet-text {
+                padding: 16px 16px 0 0;
+        }
+
+        #third-row {
+                padding: 16px 0 0 0;
+        }
+
+        #username {
+                color: #8E8E8E;
+        }
+
+        #time {
+                color: #8E8E8E;
+        }
+
+        #date {
+                color: #8E8E8E;
+        }
+
+        #version {
+                color: #2AA3EF;
+        }
+
+        #change-wrapper {
+                width: 30vw;
+                display: flex;
+                flex-direction: column;
+        }
+	#tweet-form{
+		margin:12px;
+		padding:4px;
+		border-radius:8px;
+	}
+	#tweet-form {
+		padding:0px;
+	}
+	#tweet-form-button{
+		padding:6px 48px;
+		margin-left:48px;
+		border:0;
+		color:white;
+		background-color:#1DA1F2;
+		border-radius:8px;	
+	}
+	#name-change,#username-change,#tweet-text-change,#time-change,#date-text-change,#version-change,#color-change{
+		margin:4px;
+		padding:4px;
+		border-radius:8px;
+		border:1px solid black;
+	}
+
+
+
+	.black-card{
+		background-color:black !important;
+		color:white;
+	}
+	.semi-white-text{
+		color:white;
+	}
+        </style>
+        <!--
+    
+TemplateMo 562 Space Dynamic
+
+https://templatemo.com/tm-562-space-dynamic
+
+-->
+<style>.d-none {
+    display: none;
+}
+.invalid-feedback {
+    display: none;
+}
+.btn.disabled {
+    pointer-events: none;
+    opacity: 0.65;
+}</style><style>    .switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 34px;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+
+    input:checked + .slider {
+      background-color: #2196F3;
+    }
+
+    input:focus + .slider {
+      box-shadow: 0 0 1px #2196F3;
+    }
+
+    input:checked + .slider:before {
+      -webkit-transform: translateX(26px);
+      -ms-transform: translateX(26px);
+      transform: translateX(26px);
+    }
+
+    .slider.round {
+      border-radius: 34px;
+    }
+
+    .slider.round:before {
+      border-radius: 50%;
+    }</style><style>.d-none {
+    display: none;
+}
+.invalid-feedback {
+    display: none;
+}
+.btn.disabled {
+    pointer-events: none;
+    opacity: 0.65;
+}</style><style>.d-none {
+    display: none;
+}
+.invalid-feedback {
+    display: none;
+}
+.btn.disabled {
+    pointer-events: none;
+    opacity: 0.65;
+}</style><style>.d-none {
+    display: none;
+}
+.invalid-feedback {
+    display: none;
+}
+.btn.disabled {
+    pointer-events: none;
+    opacity: 0.65;
+}</style><style>.d-none {
+    display: none;
+}
+.invalid-feedback {
+    display: none;
+}
+.btn.disabled {
+    pointer-events: none;
+    opacity: 0.65;
+}</style><style>.d-none {
+    display: none;
+}
+.invalid-feedback {
+    display: none;
+}
+.btn.disabled {
+    pointer-events: none;
+    opacity: 0.65;
+}</style><style>.d-none {
+    display: none;
+}
+.invalid-feedback {
+    display: none;
+}
+.btn.disabled {
+    pointer-events: none;
+    opacity: 0.65;
+}</style><style>.d-none {
+    display: none;
+}
+.invalid-feedback {
+    display: none;
+}
+.btn.disabled {
+    pointer-events: none;
+    opacity: 0.65;
+}</style><style>.d-none {
+    display: none;
+}
+.invalid-feedback {
+    display: none;
+}
+.btn.disabled {
+    pointer-events: none;
+    opacity: 0.65;
+}</style></head>
+
+<body>
+
+        
+
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="d-flex flex-column">
+        <main class="flex-shrink-0">
+            <!-- Navigation-->
+            <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+                <div class="container px-5">
+
+                    <a class="navbar-brand" href="index.html" style="display: flex;align-items:center"><span class="fw-bolder text-primary" style="display: flex;flex-direction: column;align-items: center;justify-content: center;padding-right: 6px;"><img src="./assets/favicon.png" style="
+    width: 102px;
+    height: auto;
+"></span>
+<span class="fw-bolder text-primary" style="
+    font-size: 26px;
+"></span></a>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
+                            <li class="nav-item"><a class="nav-link" href="www.getfyi.app">Home</a></li>
+                            
+                            
+                            
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- Page content-->
+            <section class="py-5" style="
+    padding-top: 0px !important;
+">
+                <div class="">
+                    <!-- Contact form-->
+                    <div id="shabbir" class="row" style="
+">
+	<div id="shabbir-left" class="" style="
+    display: flex;
+    justify-content: center;
+">
+		<div style="display: flex;">
+            
+                
+		
+                <div id="change-wrapper" style="width: 90vw;max-width: 440px;">
+	<!-- <div style="display:flex;flex-direction: column;align-items: center;">
+		<div style="
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+">
+                        <input type="text" value="<%= name %>" id="name-change" onchange="changeText(&quot;tname&quot;,this.value)" onkeyup="this.onchange();" onpaste="this.onchange();" oninput="this.onchange();">
+                        <input type="text" value="<%= username %>" id="username-change" onchange="changeText(&quot;username&quot;,&quot;@&quot; + this.value)" onkeyup="this.onchange();" onpaste="this.onchange();" oninput="this.onchange();">
+                        <input type="text" value="<%= tweetText %>" id="tweet-text-change" onchange="changeText(&quot;tweet-text&quot;,this.value)" onkeyup="this.onchange();" onpaste="this.onchange();" oninput="this.onchange();">
+                 </div>
+		 <div style="
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+">
+			<input type="text" value="<%= time %>" id="time-change" onchange="changeText(&quot;time&quot;,this.value)" onkeyup="this.onchange();" onpaste="this.onchange();" oninput="this.onchange();">
+                        <input type="text" value="<%= dateYear %>" id="date-text-change" onchange="changeText(&quot;date&quot;,this.value)" onkeyup="this.onchange();" onpaste="this.onchange();" oninput="this.onchange();">
+                        <input type="text" value="<%= version %>" id="version-change" onchange="changeText(&quot;version&quot;,this.value)" onkeyup="this.onchange();" onpaste="this.onchange();" oninput="this.onchange();">
+                 </div>
+	</div> -->
+			<!-- <div style="
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+">
+    <input type="text" value="#1DA1F2" id="color-change" onchange="changeColor(this.value)" onkeyup="this.onchange();" onpaste="this.onchange();" oninput="this.onchange();" style="
+">
+</div> -->
+			<!-- <div style="display:flex;align-items:space-around">
+				<p style="padding:8px;">Profile image</p>
+				<div style="padding:16px;">
+					<input type="file" name="myImage" accept="image/*" onchange="readURL(this);">
+				</div>
+			</div> -->
+			
+			
+                        
+
+
+                        
+                </div>
+        </div>
+	</div>
+                
+                <div id="card-wrapper" style="width: 220px; height: 220px; margin-top: 32px;">
+                        <div id="card">
+                                <div id="first-row">
+                                        <div id="first-row-left">
+                                                
+                                                <span id="names-block">
+                                                        <p id="tname" style="font-weight: 600;">shabir jodhpurwala</p>
+                                                        <!-- <p id="username">@&lt;%= username %&gt;</p> -->
+                                                </span>
+                                        </div>
+                                        <img src="assets/favicon - white.png" style="
+    width: 32px;
+    height: 32px;
+">
+                                </div>
+                                <div id="tweet-text">qqqqqqqqqq</div>
+                                <div id="third-row">
+                                        <span id="time">192222</span> · <span id="date">2023</span><!--  ·  --><!-- <span id="version">&lt;%= version %&gt;</span> -->
+                                </div>
+                        </div>
+                </div>
+        </div>
+        <div style="
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 12px;
+">
+      <label class="switch">
+    <input type="checkbox" onchange="changeMode(this)">
+    <span class="slider round"></span>
+  </label>
+  <p id="color-mode">white mode</p>
+</div>
+    
+    <div style="
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+">
+
+    <label for="cars" style="padding:8px;">Choose a dimension:</label><select name="cars" id="cars" onchange="resize(this.value)" style="
+">
+                                <option value="potrait">potrait</option>
+                                <option value="square">square</option>
+                                <!--<option value="landscape">landscape</option>-->
+                        </select>
+</div>
+<p style="text-align:center;margin:16px;font-size:24px;">Customise it further by stretching the bottom right corner</p>
+	<div style="text-align:center">
+		<input style="padding:8px 120px;color:white;background-color: green;border:0;margin:16px;border-radius:8px;" type="button" value="Download" id="download">
+	</div>
+            <!-- Scripts -->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/js/owl-carousel.js"></script>
+        <script src="assets/js/animation.js"></script>
+        <script src="assets/js/imagesloaded.js"></script>
+        <script src="assets/js/templatemo-custom.js"></script>        
+
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
+        <script>
+var params = window.location.href.split('?')[1]
+document.getElementById('tname').innerText = decodeURI(params.split('name=')[1].split('&')[0]);
+document.getElementById('tweet-text').innerText = decodeURI(params.split('fyi=')[1].split('&')[0]);
+document.getElementById('time').innerText = decodeURI(params.split('date=')[1].split('&')[0]);
+
+    function changeMode(e) {
+    if(e.checked==true){
+        document.getElementById('card').classList.add('black-card')
+        document.getElementById('tname').classList.add('semi-white-text')
+        document.getElementById('card-wrapper').classList.add('black-card')
+        document.getElementById('color-mode').innerText = 'black mode'
+    }else{
+        document.getElementById('card').classList.remove('black-card')
+        document.getElementById('tname').classList.remove('semi-white-text')
+        document.getElementById('card-wrapper').classList.remove('black-card')  
+        document.getElementById('color-mode').innerText = 'white mode'
+    }
+}
+        var form = document.getElementById('tweetLink');
+        document.getElementById('download').addEventListener("click", () => {
+                var node = document.getElementById('card-wrapper');
+                domtoimage.toPng(node).then(function(dataUrl) {
+                        var link = document.createElement('a');
+                        link.download = 'tweet.png';
+                        link.href = dataUrl;
+                        link.click();
+                }).catch(function(error) {
+                        console.error('oops, something went wrong!', error);
+                });
+        })
+
+        function changeText(id, text) {
+                document.getElementById(id).innerText = text;
+        }
+
+        function changeColor(color) {
+                document.getElementById('card-wrapper').style.backgroundColor = color;
+        }
+
+        function readURL(input) {
+                if(input.files && input.files[0]) {
+                        var reader = new FileReader();
+                        reader.onload = function(e) {
+                                document.getElementById('profile').src = e.target.result;
+                        };
+                        reader.readAsDataURL(input.files[0]);
+                }
+        }
+
+        function readURLForBackground(input) {
+                if(input.files && input.files[0]) {
+                        var reader = new FileReader();
+                        reader.onload = function(e) {
+                                document.getElementById('card-wrapper').style.backgroundImage = e.target.result;
+                        };
+                        reader.readAsDataURL(input.files[0]);
+                        console.log("here")
+                }
+        }
+
+        function resize(dimensions) {
+                let cardWrapper = document.getElementById('card-wrapper');
+                let card = document.getElementById('card');
+                if(dimensions == "square") {
+                        cardWrapper.style.width = "100px";
+                        cardWrapper.style.height = "100px";
+                        while(cardWrapper.clientWidth < card.clientWidth + 16 || cardWrapper.clientHeight < card.clientHeight + 16) {
+                                cardWrapper.style.width = `${cardWrapper.clientWidth+1}px`;
+                                cardWrapper.style.height = cardWrapper.style.width;
+                        }
+                }
+                if(dimensions == "landscape") {
+                        cardWrapper.style.width = "100px";
+                        cardWrapper.style.height = "100px";
+                        while(cardWrapper.clientWidth < card.clientWidth + 16 || cardWrapper.clientHeight < card.clientHeight + 16) {
+                                cardWrapper.style.width = `${cardWrapper.clientWidth+1}px`;
+                                cardWrapper.style.height = cardWrapper.style.width;
+                        }
+                        while(cardWrapper.clientWidth < 1.91 * cardWrapper.clientHeight) {
+                                cardWrapper.style.width = `${cardWrapper.clientWidth+1}px`;
+                        }
+                }
+                if(dimensions == "potrait") {
+                        cardWrapper.style.width = "100px";
+                        cardWrapper.style.height = "100px";
+                        while(cardWrapper.clientWidth < card.clientWidth + 16 || cardWrapper.clientHeight < card.clientHeight + 16) {
+                                cardWrapper.style.width = `${cardWrapper.clientWidth+1}px`;
+                                cardWrapper.style.height = cardWrapper.style.width;
+                        }
+                        while(5 * cardWrapper.clientWidth > 4 * cardWrapper.clientHeight) {
+                                cardWrapper.style.height = `${cardWrapper.clientHeight+1}px`;
+                        }
+                }
+        }
+        resize("potrait");
+        </script>
+
+                
+                </div>
+            
+            </section>
+        
+        </main>
+        <!-- Footer-->
+        <footer class="bg-white py-4 mt-auto">
+            <div class="container px-5">
+                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                    <div class="col-auto"><div class="small m-0">Copyright © FYI 2023</div></div>
+                    <div class="col-auto">
+                        <a class="small" href="#!">Privacy</a>
+                        <span class="mx-1">·</span>
+                        <a class="small" href="#!">Terms</a>
+                        <span class="mx-1">·</span>
+                        <a class="small" href="#!">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    
+
+        <!-- Footer-->
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    
+</section>
+</body></html>
