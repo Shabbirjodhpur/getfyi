@@ -456,7 +456,8 @@ https://templatemo.com/tm-562-space-dynamic
 var params = window.location.href.split('?')[1]
 document.getElementById('tname').innerText = decodeURI(params.split('name=')[1].split('&')[0]);
 document.getElementById('tweet-text').innerText = decodeURI(params.split('fyi=')[1].split('&')[0]);
-document.getElementById('time').innerText = decodeURI(params.split('date=')[1].split('&')[0]);
+let time_param = decodeURI(params.split('date=')[1].split('&')[0]);
+document.getElementById('time').innerText = `${new Date(time_param).getHours()}:${new Date(time_param).getMinutes()}`;
 
     function changeMode(e) {
     if(e.checked==true){
