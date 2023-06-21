@@ -128,6 +128,9 @@
 	.semi-white-text{
 		color:white;
 	}
+	.grey-text{
+		color:#8E8E8E;
+	}
         </style>
         <!--
     
@@ -203,6 +206,24 @@ https://templatemo.com/tm-562-space-dynamic
     .slider.round:before {
       border-radius: 50%;
     }</style><style>.d-none {
+    display: none;
+}
+.invalid-feedback {
+    display: none;
+}
+.btn.disabled {
+    pointer-events: none;
+    opacity: 0.65;
+}</style><style>.d-none {
+    display: none;
+}
+.invalid-feedback {
+    display: none;
+}
+.btn.disabled {
+    pointer-events: none;
+    opacity: 0.65;
+}</style><style>.d-none {
     display: none;
 }
 .invalid-feedback {
@@ -408,13 +429,15 @@ https://templatemo.com/tm-562-space-dynamic
         </div>
 	</div>
                 
-                <div id="card-wrapper" style="width: 220px; height: 275px; margin-top: 32px;">
-                        <div id="card">
+                <div id="card-wrapper" style="width: 220px; height: 275px; margin: 0px;">
+                        <div id="card" style="
+    margin: 0px;
+">
                                 <div id="first-row">
                                         <div id="first-row-left">
                                                 
                                                 <span id="names-block">
-                                                        <p id="tname" style="font-weight: 600;">shabbir</p>
+                                                        <p id="tname" style="font-weight: 600;">sabir jodhpurwala</p>
                                                         <!-- <p id="username">@&lt;%= username %&gt;</p> -->
                                                 </span>
                                         </div>
@@ -424,7 +447,7 @@ https://templatemo.com/tm-562-space-dynamic
     margin-left: 12px;
 ">
                                 </div>
-                                <div id="tweet-text">qqq qqqq qqq</div>
+                                <div id="tweet-text">qqqqqqqqqq</div>
                                 <div id="third-row">
                                         <span id="time">5:33</span> · <span id="date">2023</span><!--  ·  --><!-- <span id="version">&lt;%= version %&gt;</span> -->
                                 </div>
@@ -483,11 +506,13 @@ document.getElementById('time').innerText = `${new Date(time_param).getHours()}:
         document.getElementById('card').classList.add('black-card')
         document.getElementById('tname').classList.add('semi-white-text')
         document.getElementById('card-wrapper').classList.add('black-card')
+        document.getElementById('third-row').classList.add('grey-text')
         document.getElementById('color-mode').innerText = 'black mode'
     }else{
         document.getElementById('card').classList.remove('black-card')
         document.getElementById('tname').classList.remove('semi-white-text')
-        document.getElementById('card-wrapper').classList.remove('black-card')  
+        document.getElementById('card-wrapper').classList.remove('black-card') 
+        document.getElementById('third-row').classList.remove('grey-text') 
         document.getElementById('color-mode').innerText = 'white mode'
     }
 }
