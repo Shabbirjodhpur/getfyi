@@ -313,6 +313,24 @@ https://templatemo.com/tm-562-space-dynamic
 .btn.disabled {
     pointer-events: none;
     opacity: 0.65;
+}</style><style>.d-none {
+    display: none;
+}
+.invalid-feedback {
+    display: none;
+}
+.btn.disabled {
+    pointer-events: none;
+    opacity: 0.65;
+}</style><style>.d-none {
+    display: none;
+}
+.invalid-feedback {
+    display: none;
+}
+.btn.disabled {
+    pointer-events: none;
+    opacity: 0.65;
 }</style></head>
 
 <body>
@@ -429,7 +447,7 @@ https://templatemo.com/tm-562-space-dynamic
         </div>
 	</div>
                 
-                <div id="card-wrapper" style="width: 220px; height: 275px; margin: 0px;">
+                <div id="card-wrapper" style="width: 223px; height: 279px; margin: 0px;padding:0px 12px;">
                         <div id="card" style="
     margin: 0px;
 ">
@@ -437,7 +455,7 @@ https://templatemo.com/tm-562-space-dynamic
                                         <div id="first-row-left">
                                                 
                                                 <span id="names-block">
-                                                        <p id="tname" style="font-weight: 600;">Shabbir</p>
+                                                        <p id="tname" style="font-weight: 600;">sabir jodhpurwala</p>
                                                         <!-- <p id="username">@&lt;%= username %&gt;</p> -->
                                                 </span>
                                         </div>
@@ -447,9 +465,9 @@ https://templatemo.com/tm-562-space-dynamic
     margin-left: 12px;
 ">
                                 </div>
-                                <div id="tweet-text">Welcome to FYI!</div>
+                                <div id="tweet-text">qqq qqqq qqq</div>
                                 <div id="third-row">
-                                        <span id="time">5:33</span> · <span id="date">2023</span><!--  ·  --><!-- <span id="version">&lt;%= version %&gt;</span> -->
+                                        <span id="time">8:01</span> · <span id="date">2023</span><!--  ·  --><!-- <span id="version">&lt;%= version %&gt;</span> -->
                                 </div>
                         </div>
                 </div>
@@ -480,7 +498,28 @@ https://templatemo.com/tm-562-space-dynamic
                                 <!--<option value="landscape">landscape</option>-->
                         </select>
 </div>
-<p style="text-align:center;margin:16px;font-size:24px;">Customise it further by stretching the bottom right corner</p>
+
+<div style="display: flex;flex-direction: column;align-items: center;margin-top: 8px;">
+	<div style="display: flex;">
+		<p>Width :</p>
+		
+		<button onclick="changeDimensions(this,'width','+')" style="padding: 0px 8px;margin-left: 8px;margin-bottom: 8px;border: 0px;background-color: orange;color: white;">+</button>
+		<button onclick="changeDimensions(this,'width','-')" style="margin-left: 8px;margin-bottom: 8px;padding: 0px 8px;border: 0px;background-color: blue;color: white;">-</button>
+	</div>
+
+	<div style="display: flex;">
+		<p>Height:</p>
+
+		<button onclick="changeDimensions(this,'height','+')" style="padding: 0px 8px;margin-left: 8px;margin-bottom: 8px;border: 0px;background-color: orange;color: white;">+</button>
+		<button onclick="changeDimensions(this,'height','-')" style="margin-left: 8px;margin-bottom: 8px;padding: 0px 8px;border: 0px;background-color: blue;color: white;">-</button>
+	</div>
+	<div style="display: flex;">
+		<p>Padding:</p>
+
+		<button onclick="changeDimensions(this,'padding','+')" style="padding: 0px 8px;margin-left: 8px;margin-bottom: 8px;border: 0px;background-color: orange;color: white;">+</button>
+		<button onclick="changeDimensions(this,'padding','-')" style="margin-left: 8px;margin-bottom: 8px;padding: 0px 8px;border: 0px;background-color: blue;color: white;">-</button>
+	</div>
+</div>
 	<div style="text-align:center">
 		<input style="padding:8px 120px;color:white;background-color: green;border:0;margin:16px;border-radius:8px;" type="button" value="Download" id="download">
 	</div>
@@ -611,6 +650,26 @@ document.getElementById('time').innerText = `${filterHours(new Date(time_param).
                 }
         }
         resize("potrait");
+
+	document.getElementById('width-fyi-card').value = document.getElementById('card-wrapper').clientWidth;
+	document.getElementById('height-fyi-card').value = document.getElementById('card-wrapper').clientHeight;
+	function changeDimensions(obj,dimension_type,change_type){
+		if(dimension_type=='width'){
+			if(change_type=='+') document.getElementById('card-wrapper').style.width = `${document.getElementById('card-wrapper').clientWidth+5}px`
+			if(change_type=='-') document.getElementById('card-wrapper').style.width = `${document.getElementById('card-wrapper').clientWidth-5}px`
+		}
+		if(dimension_type=='height'){
+			if(change_type=='+') document.getElementById('card-wrapper').style.height = `${document.getElementById('card-wrapper').clientHeight+5}px`
+			if(change_type=='-') document.getElementById('card-wrapper').style.height = `${document.getElementById('card-wrapper').clientHeight-5}px`
+		}
+		if(dimension_type=='padding'){
+			let old_padding = parseInt(document.getElementById('card-wrapper').style.padding.split(' ')[1].split('px')[0]);
+			if(change_type=='+') document.getElementById('card-wrapper').style.padding = `0px ${old_padding+5}px`
+			if(change_type=='-') document.getElementById('card-wrapper').style.padding = `0px ${old_padding-5}px`
+		}
+	}
+
+
         </script>
 
                 
