@@ -128,6 +128,9 @@
 	.semi-white-text{
 		color:white;
 	}
+	#website-fyi{
+		color:#8E8E8E;
+	}
 	.grey-text{
 		color:#8E8E8E;
 	}
@@ -448,9 +451,7 @@ https://templatemo.com/tm-562-space-dynamic
 	</div>
                 
                 <div id="card-wrapper" style="width: 223px; height: 279px; margin: 0px;padding:8px 12px;">
-                        <div id="card" style="
-    margin: 0px;
-">
+                        <div id="card" style="margin: 0px;padding-bottom:0px;">
                                 <div id="first-row">
                                         <div id="first-row-left">
                                                 
@@ -468,6 +469,9 @@ https://templatemo.com/tm-562-space-dynamic
                                 <div id="tweet-text">qqq qqqq qqq</div>
                                 <div id="third-row">
                                         <span id="time">8:01</span> · <span id="date">2023</span><!--  ·  --><!-- <span id="version">&lt;%= version %&gt;</span> -->
+                                </div>
+				<div style="padding-top: 24px;padding-bottom: 8px;">
+                                        <p style="text-align: center;" id="website-fyi">www.getfyi.app</p>
                                 </div>
                         </div>
                 </div>
@@ -552,8 +556,8 @@ if(num==9) return '09';
 return num;
 }
 
-document.getElementById('tname').innerText = decodeURI(window.location.href.split('name=')[1].split('&')[0]);
-document.getElementById('tweet-text').innerText = decodeURI(window.location.href.split('fyi=')[1].split('&')[0]);
+document.getElementById('tname').innerText = decodeURI(window.location.href.split('name=')[1].split('&fyi=')[0]);
+document.getElementById('tweet-text').innerText = decodeURI(window.location.href.split('fyi=')[1].split('&date=')[0]);
 let time_param = parseInt(window.location.href.split('date=')[1])
 document.getElementById('time').innerText = `${filterHours(new Date(time_param).getHours())}:${filterMinutes(new Date(time_param).getMinutes())}`;
 
@@ -563,12 +567,14 @@ document.getElementById('time').innerText = `${filterHours(new Date(time_param).
         document.getElementById('tname').classList.add('semi-white-text')
         document.getElementById('card-wrapper').classList.add('black-card')
         document.getElementById('third-row').classList.add('grey-text')
+        document.getElementById('website-fyi').classList.add('grey-text')
         document.getElementById('color-mode').innerText = 'black mode'
     }else{
         document.getElementById('card').classList.remove('black-card')
         document.getElementById('tname').classList.remove('semi-white-text')
         document.getElementById('card-wrapper').classList.remove('black-card') 
         document.getElementById('third-row').classList.remove('grey-text') 
+        document.getElementById('website-fyi').classList.remove('grey-text')
         document.getElementById('color-mode').innerText = 'white mode'
     }
 }
