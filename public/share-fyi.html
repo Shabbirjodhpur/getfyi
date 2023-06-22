@@ -552,10 +552,9 @@ if(num==9) return '09';
 return num;
 }
 
-var params = window.location.href.split('?')[1]
-document.getElementById('tname').innerText = decodeURI(params.split('name=')[1].split('&')[0]);
-document.getElementById('tweet-text').innerText = decodeURI(params.split('fyi=')[1].split('&')[0]);
-let time_param = parseInt(decodeURI(params.split('date=')[1].split('&')[0]))
+document.getElementById('tname').innerText = decodeURI(window.location.href.split('name=')[1].split('&')[0]);
+document.getElementById('tweet-text').innerText = decodeURI(window.location.href.split('fyi=')[1].split('&')[0]);
+let time_param = parseInt(window.location.href.split('date=')[1])
 document.getElementById('time').innerText = `${filterHours(new Date(time_param).getHours())}:${filterMinutes(new Date(time_param).getMinutes())}`;
 
     function changeMode(e) {
@@ -651,8 +650,8 @@ document.getElementById('time').innerText = `${filterHours(new Date(time_param).
         }
         resize("potrait");
 
-	document.getElementById('width-fyi-card').value = document.getElementById('card-wrapper').clientWidth;
-	document.getElementById('height-fyi-card').value = document.getElementById('card-wrapper').clientHeight;
+	//document.getElementById('width-fyi-card').value = document.getElementById('card-wrapper').clientWidth;
+	//document.getElementById('height-fyi-card').value = document.getElementById('card-wrapper').clientHeight;
 	function changeDimensions(obj,dimension_type,change_type){
 		if(dimension_type=='width'){
 			if(change_type=='+') document.getElementById('card-wrapper').style.width = `${document.getElementById('card-wrapper').clientWidth+5}px`
@@ -668,8 +667,6 @@ document.getElementById('time').innerText = `${filterHours(new Date(time_param).
 			if(change_type=='-') document.getElementById('card-wrapper').style.padding = `0px ${old_padding-5}px`
 		}
 	}
-
-
         </script>
 
                 
