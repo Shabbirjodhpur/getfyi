@@ -6,7 +6,7 @@
         <meta name="author" content="">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
-        <title>PicATweet</title>
+        <title>Share FYI</title>
         <!-- Bootstrap core CSS -->
         <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <!-- Additional CSS Files -->
@@ -437,7 +437,7 @@ https://templatemo.com/tm-562-space-dynamic
                                         <div id="first-row-left">
                                                 
                                                 <span id="names-block">
-                                                        <p id="tname" style="font-weight: 600;">sabir jodhpurwala</p>
+                                                        <p id="tname" style="font-weight: 600;">Shabbir</p>
                                                         <!-- <p id="username">@&lt;%= username %&gt;</p> -->
                                                 </span>
                                         </div>
@@ -447,7 +447,7 @@ https://templatemo.com/tm-562-space-dynamic
     margin-left: 12px;
 ">
                                 </div>
-                                <div id="tweet-text">qqqqqqqqqq</div>
+                                <div id="tweet-text">Welcome to FYI!</div>
                                 <div id="third-row">
                                         <span id="time">5:33</span> · <span id="date">2023</span><!--  ·  --><!-- <span id="version">&lt;%= version %&gt;</span> -->
                                 </div>
@@ -495,11 +495,29 @@ https://templatemo.com/tm-562-space-dynamic
     
         <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
         <script>
+function filterHours(num){
+if(num==0) return '00';
+return num;
+}
+function filterMinutes(num){
+if(num==0) return '00';
+if(num==1) return '01';
+if(num==2) return '02';
+if(num==3) return '03';
+if(num==4) return '04';
+if(num==5) return '05';
+if(num==6) return '06';
+if(num==7) return '07';
+if(num==8) return '08';
+if(num==9) return '09';
+return num;
+}
+
 var params = window.location.href.split('?')[1]
 document.getElementById('tname').innerText = decodeURI(params.split('name=')[1].split('&')[0]);
 document.getElementById('tweet-text').innerText = decodeURI(params.split('fyi=')[1].split('&')[0]);
 let time_param = parseInt(decodeURI(params.split('date=')[1].split('&')[0]))
-document.getElementById('time').innerText = `${new Date(time_param).getHours()}:${new Date(time_param).getMinutes()}`;
+document.getElementById('time').innerText = `${filterHours(new Date(time_param).getHours())}:${filterMinutes(new Date(time_param).getMinutes())}`;
 
     function changeMode(e) {
     if(e.checked==true){
