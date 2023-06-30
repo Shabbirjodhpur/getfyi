@@ -580,12 +580,8 @@ document.getElementById('time').innerText = `${filterHours(new Date(time_param).
 }
         var form = document.getElementById('tweetLink');
         document.getElementById('download').addEventListener("click", () => {
-var scale = 2;
                 var node = document.getElementById('card-wrapper');
-                domtoimage.toPng(node,{
-    width: node.clientWidth * scale,
-    height: node.clientHeight * scale,
-}).then(function(dataUrl) {
+                domtoimage.toPng(node).then(function(dataUrl) {
                         var link = document.createElement('a');
                         link.download = 'tweet.png';
                         link.href = dataUrl;
